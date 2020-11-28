@@ -105,7 +105,7 @@ For example:
   ./github-merge.py 3077
 
 (in any git repository) will help you merge pull request #3077 for the
-PIVX-Project/PIVX repository.
+Kopernikus-dev/pivx4.2 repository.
 
 What it does:
 * Fetch master and the pull request.
@@ -125,7 +125,7 @@ Setup
 ---------
 Configuring the github-merge tool for the PIVX repository is done in the following way:
 
-    git config githubmerge.repository PIVX-Project/PIVX
+    git config githubmerge.repository Kopernikus-dev/pivx4.2
     git config githubmerge.testcmd "make -j4 check" (adapt to whatever you want to use for testing)
     git config --global user.signingkey mykeyid
 

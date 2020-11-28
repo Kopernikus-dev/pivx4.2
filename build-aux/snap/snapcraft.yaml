@@ -68,7 +68,7 @@ apps:
     plugs: [home]
 parts:
   pivx-core:
-    source: https://github.com/PIVX-Project/PIVX
+    source: https://github.com/Kopernikus-dev/pivx4.2
     source-type: git
     source-tag: master
     plugin: nil

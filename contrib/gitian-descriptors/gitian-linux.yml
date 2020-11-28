@@ -33,7 +33,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/pivx-project/pivx.git"
+- "url": "https://github.com/kopernikus-dev/pivx4.2.git"
   "dir": "pivx"
 files: []
 script: |
