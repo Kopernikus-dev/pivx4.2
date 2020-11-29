@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifdef HAVE_CONFIG_H
-#include "config/encocoin.config.h"
+#include "config/encocoin-config.h"
 #endif
 
 #include "netbase.h"

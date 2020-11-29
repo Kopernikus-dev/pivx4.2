@@ -8,7 +8,7 @@
 #include "QListView"
 
 #if defined(HAVE_CONFIG_H)
-#include "config/encocoin.config.h"
+#include "config/encocoin-config.h"
 #endif
 
 #include "bitcoinunits.h"

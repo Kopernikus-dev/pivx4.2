@@ -7,7 +7,7 @@
 #define EncoCoin_CORE_NEW_GUI_EncoCoinGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/encocoin.config.h"
+#include "config/encocoin-config.h"
 #endif
 
 #include <QMainWindow>

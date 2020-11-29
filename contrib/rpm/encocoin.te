@@ -14,8 +14,8 @@ permissive encocoin_t;
 type encocoin_initrc_exec_t;
 init_script_file(encocoin_initrc_exec_t)
 
-type encocoin.conf_t;
-files_type(encocoin.conf_t)
+type encocoin_conf_t;
+files_type(encocoin_conf_t)
 
 type encocoin_var_lib_t;
 files_type(encocoin_var_lib_t)
@@ -35,8 +35,8 @@ allow encocoin_t self:process { fork };
 allow encocoin_t self:fifo_file rw_fifo_file_perms;
 allow encocoin_t self:unix_stream_socket create_stream_socket_perms;
 
-manage_dirs_pattern(encocoin_t, encocoin.conf_t, encocoin.conf_t)
-manage_files_pattern(encocoin_t, encocoin.conf_t, encocoin.conf_t)
+manage_dirs_pattern(encocoin_t, encocoin_config_t, encocoin_conf_t)
+manage_files_pattern(encocoin_t, encocoin_config_t, encocoin_conf_t)
 
 manage_dirs_pattern(encocoin_t, encocoin_var_lib_t, encocoin_var_lib_t)
 manage_files_pattern(encocoin_t, encocoin_var_lib_t, encocoin_var_lib_t)
