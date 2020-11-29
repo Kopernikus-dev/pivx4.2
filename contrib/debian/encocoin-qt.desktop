@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=EncoCoin Core
+Comment=EncoCoin P2P Cryptocurrency
+Exec=encocoin-qt %u
+Terminal=false
+Type=Application
+Icon=encocoin128
+MimeType=x-scheme-handler/encocoin;
+Categories=Office;Finance;
+StartupWMClass=Encocoin-qt
+Name[de_DE]=encocoin-qt.desktop
