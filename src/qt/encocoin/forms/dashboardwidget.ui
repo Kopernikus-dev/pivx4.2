@@ -519,7 +519,7 @@
             <item>
              <widget class="QLabel" name="labelMessage">
               <property name="text">
-               <string>Amount of XNK and zXNK staked.</string>
+               <string>Amount of XNK staked.</string>
               </property>
              </widget>
             </item>

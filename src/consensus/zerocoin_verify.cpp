@@ -258,7 +258,7 @@ bool RecalculateXNKSupply(int nHeightStart, bool fSkipZxnk)
 
         // Add fraudulent funds to the supply and remove any recovered funds.
         if (pindex->nHeight == consensus.height_ZC_RecalcAccumulators) {
-            const CAmount nInvalidAmountFiltered = 268200*COIN;    //Amount of invalid coins filtered through exchanges, that should be considered valid
+            const CAmount nInvalidAmountFiltered = 0*COIN;    //Amount of invalid coins filtered through exchanges, that should be considered valid
             LogPrintf("%s : Original money supply=%s\n", __func__, FormatMoney(nMoneySupply));
 
             nMoneySupply += nInvalidAmountFiltered;
