@@ -96,7 +96,7 @@ else()
     )
 endif()
 
-# run configure if encocoin-config.h doesn't exist
+# run configure if encocoin_config.h doesn't exist
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/config/encocoin-config.h")
 else()
     execute_process(
