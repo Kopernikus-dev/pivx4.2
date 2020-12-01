@@ -127,8 +127,8 @@ MasterNodesWidget::MasterNodesWidget(EncoCoinGUI *parent) :
         onStartAllClicked(REQUEST_START_MISSING);
     });
     connect(ui->listMn, &QListView::clicked, this, &MasterNodesWidget::onMNClicked);
-    connect(ui->btnAbout, &OptionButton::clicked, [this](){window->openFAQ(9);});
-    connect(ui->btnAboutController, &OptionButton::clicked, [this](){window->openFAQ(10);});
+    connect(ui->btnAbout, &OptionButton::clicked, [this](){window->openFAQ(5);});
+    connect(ui->btnAboutController, &OptionButton::clicked, [this](){window->openFAQ(6);});
 }
 
 void MasterNodesWidget::showEvent(QShowEvent *event)
@@ -477,8 +477,8 @@ void MasterNodesWidget::onCreateMNClicked()
         return;
     }
 
-    if (walletModel->getBalance() <= (COIN * 10000)) {
-        inform(tr("Not enough balance to create a masternode, 10,000 %1 required.").arg(CURRENCY_UNIT.c_str()));
+    if (walletModel->getBalance() <= (COIN * 50000)) { // if (walletModel->getBalance() <= (COIN * GetMNCollateral())) {
+        inform(tr("Not enough balance to create a masternode, 50,000 %1 required.").arg(CURRENCY_UNIT.c_str())); // inform(tr("Not enough balance to create a masternode, %1 %2 required.").arg(GetMNCollateral()).arg(CURRENCY_UNIT.c_str()));
         return;
     }
     showHideOp(true);
