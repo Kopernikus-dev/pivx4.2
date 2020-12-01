@@ -410,12 +410,6 @@ jobs:
           make -j2 ${{ matrix.config.goal }} || ( echo "Build failure. Verbose build follows." && make ${{ matrix.config.goal }} V=1 ; false )
           echo ::endgroup::
 
-          if [ "${{ matrix.config.unit_tests }}" = "true" ] || [ "${{ matrix.config.functional_tests }}" = "true" ]; then
-            echo ::group::Params
-            util/fetch-params.sh $PARAMS_DIR
-            echo ::endgroup::
-          fi
-
           if [ "${{ matrix.config.unit_tests }}" = "true" ]; then
             echo ::group::Unit-Tests
             LD_LIBRARY_PATH=$GITHUB_WORKSPACE/depends/"${{ matrix.config.host }}"/lib make -j2 check VERBOSE=1
