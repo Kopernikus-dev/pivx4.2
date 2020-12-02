@@ -253,10 +253,10 @@ public:
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
 
-        genesis = CreateGenesisBlock(1588787853, 39886, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 250 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000084fa44e813d62c60d1443dd86164d7cea08e14420353c6c9c5e8c9a743e"));
-        assert(genesis.hashMerkleRoot == uint256S("be95faff7110778c545e219557a8520c5a2a973c9622b0c1ef6d4be24a234bbc"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
+        assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"))
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.powLimit   = ~UINT256_ZERO >> 20;				// EncoCoin starting difficulty is 1 / 2^12
@@ -279,7 +279,7 @@ public:
         consensus.nTimeSlotLength = 15;							// 15 seconds
 
         // spork keys
-        consensus.strSporkPubKey = "0485126a36740117077d8c3b7a503a79b6d696d0626c1d929b4242344fe3bf7dde8377dc19679466e28fffd1aad4e6b2b3ee74de1d96de5fdb5a4bdd5ba3dd6ebe";
+        consensus.strSporkPubKey = "04E88BB455E2A04E65FCC41D88CD367E9CCE1F5A409BE94D8C2B4B35D223DED9C8E2F4E061349BA3A38839282508066B6DC4DB72DD432AC4067991E6BF20176127";
         consensus.strSporkPubKeyOld = "04A8B319388C0F8588D238B9941DC26B26D3F9465266B368A051C5C100F79306A557780101FE2192FE170D7E6DEFDCBEE4C8D533396389C0DAFFDBC842B002243C";
         consensus.nTime_EnforceNewSporkKey = 1566860400;    //!> August 26, 2019 11:00:00 PM GMT
         consensus.nTime_RejectOldSporkKey = 1569538800;     //!> September 26, 2019 11:00:00 PM GMT
@@ -390,8 +390,8 @@ public:
 
         genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 250 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000084fa44e813d62c60d1443dd86164d7cea08e14420353c6c9c5e8c9a743e"));
-        assert(genesis.hashMerkleRoot == uint256S("be95faff7110778c545e219557a8520c5a2a973c9622b0c1ef6d4be24a234bbc"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
+        assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.powLimit   = ~UINT256_ZERO >> 20;				// EncoCoin starting difficulty is 1 / 2^12
