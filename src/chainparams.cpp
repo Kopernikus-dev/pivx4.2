@@ -253,7 +253,7 @@ public:
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
 
-        genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1588787853, 39886, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x0000084fa44e813d62c60d1443dd86164d7cea08e14420353c6c9c5e8c9a743e"));
         assert(genesis.hashMerkleRoot == uint256S("be95faff7110778c545e219557a8520c5a2a973c9622b0c1ef6d4be24a234bbc"));
