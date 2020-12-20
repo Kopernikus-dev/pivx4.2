@@ -514,7 +514,7 @@ bool CWallet::CreateZCPublicSpendTransaction(
 {
     // Check available funds
     int nStatus = ZXNK_TRX_FUNDS_PROBLEMS;
-    if (nValue > GetZerocoinBalance()) {
+    if (nValue > GetZerocoinBalance(true)) {
         receipt.SetStatus(_("You don't have enough Zerocoins in your wallet"), nStatus);
         return false;
     }
@@ -738,9 +738,27 @@ bool CWallet::CreateZCPublicSpendTransaction(
 
 // - ZC Balances
 
-CAmount CWallet::GetZerocoinBalance() const
+CAmount CWallet::GetZerocoinBalance(bool fMatureOnly) const
 {
-    return zxnkTracker->GetBalance();
+    if (fMatureOnly) {
+        // This code is not removed just for when we back to use zXNK in the future, for now it's useless,
+        // every public coin spend is now spendable without need to have new mints on top.
+
+        //if (chainActive.Height() > nLastMaturityCheck)
+        //nLastMaturityCheck = chainActive.Height();
+
+        CAmount nBalance = 0;
+        std::vector<CMintMeta> vMints = zxnkTracker->GetMints(true);
+        for (auto meta : vMints) {
+            // Every public coin spend is now spendable, no need to mint new coins on top.
+            //if (meta.nHeight >= mapMintMaturity.at(meta.denom) || meta.nHeight >= chainActive.Height() || meta.nHeight == 0)
+            //    continue;
+            nBalance += libzerocoin::ZerocoinDenominationToAmount(meta.denom);
+        }
+        return nBalance;
+    }
+
+    return zxnkTracker->GetBalance(false, false);
 }
 
 CAmount CWallet::GetUnconfirmedZerocoinBalance() const
